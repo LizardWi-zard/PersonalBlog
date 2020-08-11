@@ -1,0 +1,123 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+main {
+    width: 840px;
+    height: 70px;
+    margin: 0 auto;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    border-radius: 10px 10px 10px 10px;
+    border: 1px #ccc;
+}
+
+.toolbarItem {
+    width: 840px;
+    margin: 0 auto;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+}
+
+.toolbar {
+    position: fixed;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #56b8db;
+    border-bottom: 1px solid #ccc;
+}
+
+    .toolbar a {
+        width: 22%;
+        color: #eee;
+        display: inline-block;
+        padding: 10px;
+        text-decoration: none;
+        font-family: Verdana;
+    }
+
+a:hover {
+    color: #4343fa
+}
+
+.profile {
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    border: 1px #ccc;
+    width: 840px;
+    height: 220px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #fcfcfc;
+}
+
+.profileIMG {
+    float: left;
+    margin: 10px;
+    height: 150px;
+    width: 150px;
+    background-color: #ccc;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.profileDescription {
+    width: 645px;
+    height: 160px;
+    float: left;
+    margin-left: 15px;
+    font-family: arial;
+    background-color: #ccc;
+}
+
+.contacts {
+    width: 770px;
+    height: 40px;
+    background-color: #ccc;
+    margin-left: 10px;
+    float: left;
+}
+
+.button {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 25px;
+    height: 40px;
+    width: 40px;
+    background-color: #ccc;
+    border: 1px #fcfcfc;
+    border-radius: 25px 25px 25px 25px;
+}
+
+
+.post {
+    width: 840px;
+    height: 100px;
+    background-color: #fcfcfc;
+    border-radius: 10px 10px 10px 10px;
+}
+
+    .post a {
+        margin-right: 10px;
+        float: right;
+        text-decoration: none;
+        margin: 10px;
+        font-family: arial;
+    }
+
+    .post p, h2 {
+        text-align: left;
+        margin: 10px;
+        font-family: arial;
+    }

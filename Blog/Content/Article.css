@@ -1,0 +1,87 @@
+﻿
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+main {
+    width: 840px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-left: auto;
+    border-radius: 10px 10px 10px 10px;
+    border: 1px #ccc;
+}
+.toolbarItem {
+    width: 840px;
+    margin: 0 auto;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+}
+
+.toolbar {
+    position: fixed;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #56b8db;
+    border-bottom: 1px solid #ccc;
+}
+
+    .toolbar a {
+        width: 22%;
+        color: #eee;
+        display: inline-block;
+        padding: 10px;
+        text-decoration: none;
+        font-family: Verdana;
+    }
+a:hover {
+    color: #4343fa
+}
+.content {
+    width: 840px;
+    padding-bottom: 25px;
+    background-color: #fcfcfc;
+    border-radius: 10px 10px 10px 10px;
+}
+.content a {
+    float: right;
+    text-decoration: none;
+    margin-right: 10px;
+    font-family: arial;
+}
+
+.content p {
+    margin: 10px;
+    font-family: arial;
+    text-align: left;
+}
+h3 {
+    margin: 10px;
+    font-family: arial;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 5px;
+    font-family: arial;
+}
+
+
+article {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+

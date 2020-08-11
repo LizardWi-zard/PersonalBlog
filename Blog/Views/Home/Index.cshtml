@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Blog";
+}
+
+<head>
+    <meta charset="utf-8">
+    <title> Блог </title>
+    <link  type="text/css" rel="stylesheet" href="../../Content/Profile.css" />
+</head>
+
+<body>
+    <header>
+        <div class="toolbar">
+            <div class="toolbarItem">
+                <a href="#">Главная</a>
+                <a href="#">Блог</a>
+                <a href="#">Контакты</a>
+            </div>
+        </div>
+        <div class="profile">
+            <div class="profileIMG"> </div>
+            <div class="profileDescription">
+                <h3> Имя Фамилия</h3>
+                <p> Информация о себе</p>
+            </div>
+            <div class="contacts"> значки приложений  </div>
+            <input class="button" type="button" value="+" />
+        </div>
+    </header>
+
+    <main>
+        <div>
+            @foreach (var b in ViewBag.Articles)
+            {
+                  <div class="post">
+                      <h2> @b.Name </h2>
+                      <p> @b.Content </p>
+                      <a href="/Home/ReadArticle/@b.Id"> Читать далее... </a>
+                  </div>
+            }
+        </div>
+    </main>
+</body>

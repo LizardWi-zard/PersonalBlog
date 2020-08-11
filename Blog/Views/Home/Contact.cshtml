@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Статья</title>
+    </head>
+    <body>
+        <div class="toolbar">
+            <div class="toolbarItem">
+                <a href="#">Главная</a>
+                <a href="#">Блог</a>
+                <a href="#">Контакты</a>
+             
+            </div>
+        </div>
+
+        <main>
+            <input type="hidden" value="@ViewBag.ArticleId" name="ArticleId" />
+            <div class="postName">
+                <table>
+
+                    @foreach (var b in ViewBag.Articles)
+                    {
+                        <tr>
+                            <td><p>@b.Name</p></td>
+                            <td><p>@b.Content</p></td>
+                            <td><p>@b.Date</p></td>
+                            <td><p><a href="/Home/Buy/@b.Id"> Читать далее... </a></p></td>
+                        </tr>
+                    }
+
+                </table>
+                <a href="~/Home/Index"> Назад </a>
+            </div>
+        </main>
+    </body>
+    </html>
