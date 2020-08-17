@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+@model Blog.Models.Article
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <title>EditArticle</title>
+    <link type="text/css" rel="stylesheet" href="../../Content/Edit.css" />
+</head>
+
+<body>
+    <div class="toolbar">
+        <div class="toolbarItem">
+            <a href="~/Home/Index">Главная</a>
+            <a href="#">Блог</a>
+            <a href="#">Контакты</a>
+        </div>
+    </div>
+
+    <main>
+        <input type="hidden" value="@ViewBag.ArticleId" name="ArticleId" />
+
+        @using (Html.BeginForm())
+        {
+              <fieldset>
+              <p class="nameEdit">
+                  @Html.LabelFor(m => m.Name, "Название статьи")
+                  <br />
+                  @Html.EditorFor(m => m.Name)
+              </p>
+              <p class="contentEdit">
+                  @Html.LabelFor(m => m.Content, "Заголовок")
+                  <br />
+                  @Html.TextAreaFor(m => m.Content)
+              </p>
+              <p class="mainContentEdit">
+                  @Html.LabelFor(m => m.MainContent, "Основное содержание")
+                  <br />
+                      @Html.TextAreaFor(m => m.MainContent)
+                  </p>
+                  <p><input type="submit" value="Добавить" /></p>
+              </fieldset>
+          }
+        </main>
+
+</body>
+</html>
+

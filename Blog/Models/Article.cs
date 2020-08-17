@@ -15,6 +15,6 @@ namespace Blog.Models
 
         public string MainContent { get; set; }
 
-        public DateTime Date { get; set; }
+      //  public DateTime Date { get; set; }
     }
 }

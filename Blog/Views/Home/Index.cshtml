@@ -12,7 +12,7 @@
     <header>
         <div class="toolbar">
             <div class="toolbarItem">
-                <a href="#">Главная</a>
+                <a href="~/Home/Index">Главная</a>
                 <a href="#">Блог</a>
                 <a href="#">Контакты</a>
             </div>
@@ -24,7 +24,7 @@
                 <p> Информация о себе</p>
             </div>
             <div class="contacts"> значки приложений  </div>
-            <input class="button" type="button" value="+" />
+            <a class="button" href="/Home/CreateArticle"> + </a>
         </div>
     </header>
 
@@ -35,6 +35,7 @@
                   <div class="post">
                       <h2> @b.Name </h2>
                       <p> @b.Content </p>
+                      <a href="/Home/EditArticle/@b.Id"> Редактировать </a>
                       <a href="/Home/ReadArticle/@b.Id"> Читать далее... </a>
                   </div>
             }

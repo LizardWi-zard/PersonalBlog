@@ -13,7 +13,7 @@
     <body>
         <div class="toolbar">
             <div class="toolbarItem">
-                <a href="#">Главная</a>
+                <a href="~/Home/Index">Главная</a>
                 <a href="#">Блог</a>
                 <a href="#">Контакты</a>
              
@@ -27,20 +27,15 @@
                 {
                     if (b.Id == @ViewBag.ArticleId)
                     {
-                        
-                        
-                      
-                <div class="content">
-                    <h2> @b.Name </h2>
-                    <article>
-                        <h3> @b.Content </h3>
-                        <p> @b.MainContent </p>
-                    </article>
-                    <a href="~/Home/Index"> Назад </a>
-                </div>
-
+                        <div class="content">
+                            <h2> @b.Name </h2>
+                            <article>
+                                <h3> @b.Content </h3>
+                                <p> @b.MainContent </p>
+                            </article>
+                            <a href="~/Home/Index"> Назад </a>
+                        </div>
                     }
-
                 }
             </div>
         </main>

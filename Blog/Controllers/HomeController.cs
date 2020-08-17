@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -29,5 +30,43 @@ namespace Blog.Controllers
             ViewBag.ArticleId = id;
             return View();
         }
-    }
+
+        [HttpGet]
+        public ActionResult EditArticle(int? id)
+        {
+            if (id == null)
+            {
+                return Index();
+            }
+            Article article = db.Articles.Find(id);
+            if (article != null)
+            {
+                return View(article);
+            }
+            return Index();
+        }
+
+        [HttpPost]
+        public ActionResult EditArticle(Article article)
+        {
+            db.Entry(article).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult CreateArticle()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateArticle(Article article)
+        {
+            db.Articles.Add(article);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+    }   
 }
