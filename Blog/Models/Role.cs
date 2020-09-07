@@ -5,7 +5,10 @@ using System.Web;
 
 namespace Blog.Models
 {
-    public class IdentityDbContext
+    public class Role
     {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
     }
 }
