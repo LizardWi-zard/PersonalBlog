@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Blog.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+
 
 namespace Blog.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController :  AccountController
     {
         ArticleContext db = new ArticleContext();
 
@@ -28,9 +34,11 @@ namespace Blog.Controllers
             IEnumerable<Article> articles = db.Articles;
             ViewBag.Articles = articles;
             ViewBag.ArticleId = id;
+
             return View();
         }
 
+        [Authorize(Roles = "admin")]
         [HttpGet]
         public ActionResult EditArticle(int? id)
         {
@@ -46,6 +54,7 @@ namespace Blog.Controllers
             return Index();
         }
 
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public ActionResult EditArticle(Article article)
         {
@@ -54,12 +63,14 @@ namespace Blog.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "admin")]
         [HttpGet]
         public ActionResult CreateArticle()
         {
             return View();
         }
 
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public ActionResult CreateArticle(Article article)
         {
@@ -68,5 +79,22 @@ namespace Blog.Controllers
 
             return RedirectToAction("Index");
         }
+
+        // public ActionResult LoginView()
+        // {
+        //     return View();
+        // }
+
+
+        // [HttpPost]
+        // public ActionResult LoginView(string email, string password)
+        // {
+        //     if(email == "hello" && password == "12345")
+        //     {
+        //         return RedirectToAction("EditArticle");
+        //     }
+        //
+        //     return RedirectToAction("Index");
+        // }
     }   
 }

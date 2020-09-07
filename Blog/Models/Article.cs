@@ -14,7 +14,5 @@ namespace Blog.Models
         public string Content { get; set; }
 
         public string MainContent { get; set; }
-
-      //  public DateTime Date { get; set; }
     }
 }
