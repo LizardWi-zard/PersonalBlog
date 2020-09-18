@@ -15,7 +15,7 @@ namespace Blog.Models
 
             db.Users.Add(new User
             {
-                Email = "123@mail.com",
+                Email = "123",
                 Password = "123",
                 RoleId = 1
             });
