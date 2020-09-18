@@ -7,6 +7,8 @@ using Microsoft.Owin.Security;
 // using Blog.ViewModels; // пространство имен LoginViewModel
 using Blog.Models; // пространство имен моделей
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Data.Entity;
 
 namespace Blog.Controllers
 {
@@ -33,6 +35,21 @@ namespace Blog.Controllers
             if (ModelState.IsValid)
             {
                 User user = await db.Users.Include(u => u.Role).FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password);
+
+                //  User user = Task.Run(() => db.Users.Include(u => u.Role).FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password)).Result;
+              
+                
+                //User user = db.Users.Include(u => u.Role).ToList().Where(u => u.Email == model.Email && u.Password == model.Password).FirstOrDefault();
+
+                //System.Diagnostics.Debugger.NotifyOfCrossThreadDependency();
+                //User user = await db.Users.Where(u => u.Email == model.Email && u.Password == model.Password).FirstOrDefaultAsync(); 
+
+                //IQueryable<User> users = db.Users.Include(x => x.Role);
+                //
+                //var mails = users.Where(x => x.Email == model.Email);
+                //var passwords = mails.Where(x => x.Password == model.Password);
+                //
+                //User user = passwords.First();
 
                 if (user == null)
                 {
